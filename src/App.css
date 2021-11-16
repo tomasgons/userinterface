@@ -1,21 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #4c5e82;
+}
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,15 +13,133 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.userlist {
+  background-color: #56f5c3;
+
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+  justify-content: center;
+  width: 70%;
+  padding: 10px 20px 10px 20px;
+  color: white;
+  border-radius: 10px;
+}
+.useritem {
+  background-color: #61049b;
+  width: 100%;
+
+  margin: 10px 0 10px 0;
+
+  padding: 10px;
+  text-align: left;
+
+  color: white;
+  border-radius: 10px;
+}
+.userform {
+  background-color: #5e56f5;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+  justify-content: center;
+  width: 70%;
+  padding: 10px 20px 10px 20px;
+  color: white;
+  border-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.userform label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.userform input {
+  display: block;
+  width: 100%;
+  border: 1px solid #ccc;
+  font: inherit;
+  line-height: 1.5rem;
+  padding: 0 0.25rem;
+  margin-bottom: 0.5rem;
+}
+.userform button {
+  background: lightcoral;
+}
+
+.modalcontainer {
+  position: fixed;
+  top: 50%;
+  left: 1%;
+  width: 400px;
+  visibility: hidden;
+  opacity: 0;
+
+  -webkit-transition: visibility 0.3s, opacity 0.3s ease-in;
+  transition: visibility 0.3s, opacity 0.3s ease-in;
+}
+
+.modalcontaineropen {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 50%;
+  left: 1%;
+  width: 400px;
+
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: visibility 0s, opacity 0.3s ease-in;
+  transition: visibility 0s, opacity 0.3s ease-in;
+}
+
+.modal {
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.727);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.727);
+  position: absolute;
+  overflow: hidden;
+  top: 20%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  width: 400px;
+  z-index: 100;
+}
+
+.modalheader {
+  background-color: #1019bd;
+  color: white;
+  padding: 15px;
+  margin: 0;
+}
+
+.modalheader h3 {
+  margin: 0;
+}
+
+.modalcontent {
+  padding: 20px;
+}
+
+.modalcontent div {
+  margin: 15px 0;
+  font-family: "Lato", sans-serif;
+  font-size: 17px;
+}
+
+.modalcontent button {
+  color: white;
+  padding: 5px;
+  background-color: rgb(138, 18, 18);
+  font-size: 15px;
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
