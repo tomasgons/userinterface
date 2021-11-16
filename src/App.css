@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #4c5e82;
+  background-color: #121418;
 }
 .App {
   display: flex;
@@ -37,6 +37,18 @@ body {
   color: white;
   border-radius: 10px;
 }
+
+.useritem button {
+  background: rgb(238, 40, 18);
+  padding: 5px;
+  border-radius: 10px;
+  color: white;
+}
+
+.useritem button:hover {
+  background: rgb(255, 193, 193);
+  color: red;
+}
 .userform {
   background-color: #5e56f5;
   margin-top: 30px;
@@ -66,14 +78,18 @@ body {
   margin-bottom: 0.5rem;
 }
 .userform button {
-  background: lightcoral;
+  background: rgb(52, 29, 198);
+  padding: 5px;
+  border-radius: 10px;
+  color: white;
 }
 
 .modalcontainer {
   position: fixed;
-  top: 50%;
-  left: 1%;
-  width: 400px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
   visibility: hidden;
   opacity: 0;
 
@@ -84,9 +100,10 @@ body {
 .modalcontaineropen {
   background-color: rgba(0, 0, 0, 0.6);
   position: fixed;
-  top: 50%;
-  left: 1%;
-  width: 400px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
 
   visibility: visible;
   opacity: 1;
@@ -102,12 +119,12 @@ body {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.727);
   position: absolute;
   overflow: hidden;
-  top: 20%;
-  left: 50%;
+  top: 30vh;
+  left: 20%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   max-width: 100%;
-  width: 400px;
+  width: 30%;
   z-index: 100;
 }
 

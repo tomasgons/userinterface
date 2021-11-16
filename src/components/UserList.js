@@ -5,10 +5,6 @@ import UserItem from './UserItem'
 function UserList(props) {
 
 
-
-
-
-
     return (
 
         <ul className='userlist'> {props.items.map((user) => (

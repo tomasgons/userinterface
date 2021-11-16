@@ -10,16 +10,13 @@ function UserForm(props) {
 
     const nameChangeHandler = (event) => {
         if (event.target.value.trim().length > 0) {
-
         }
-
 
         setEnteredName(event.target.value);
 
     };
     const ageChangeHandler = (event) => {
         if (event.target.value.trim().length > 0)
-
             setEnteredAge(event.target.value);
 
     };
@@ -31,7 +28,7 @@ function UserForm(props) {
             setTextModal("Please enter a valid name and age (no empty input field)")
             return;
         }
-        if (enteredAge < 0) {
+        if (+enteredAge < 0) {
             setModal('modalcontaineropen')
             setTextModal("Please enter a valid age (> 0)")
             return;
@@ -54,7 +51,7 @@ function UserForm(props) {
         setModal('modalcontainer');
         setEnteredName('');
         setEnteredAge('');
-        console.log('check');
+
     }
 
 
@@ -64,12 +61,13 @@ function UserForm(props) {
         <form onSubmit={submitHandler} className="userform" >
             <div className="">
                 <h1>UserList</h1>
+                <p>no empty fields and no negative age, try it out</p>
                 <div className="">
                     <label>Name </label>
                     <input type="text" value={enteredName} onChange={nameChangeHandler} />
                 </div>
                 <div className="">
-                    <label>Age </label>
+                    <label>Age (Years)</label>
                     <input type="number" value={enteredAge} onChange={ageChangeHandler} />
                 </div>
                 <div className="">

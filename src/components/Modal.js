@@ -8,9 +8,9 @@ const Modal = (props) => {
                     <h3>Oops</h3>
 
                 </div>
-                <div className="modalcontent">
+                <div className="modalcontent" >
                     <p>{props.text}</p>
-                    <button onClick={props.onClick}>Okay</button>
+                    <button type="button" onClick={props.onClick}>Okay</button>
                 </div>
             </div>
         </div>
