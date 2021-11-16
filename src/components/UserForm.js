@@ -5,8 +5,8 @@ function UserForm(props) {
     const [enteredName, setEnteredName] = useState('');
     const [enteredAge, setEnteredAge] = useState('');
 
-    const [isModal, setModal] = useState('modalcontainer');
-    const [textModal, setTextModal] = useState('modalcontainer');
+    const [error, setError] = useState('');
+
 
     const nameChangeHandler = (event) => {
         if (event.target.value.trim().length > 0) {
@@ -24,13 +24,21 @@ function UserForm(props) {
     const submitHandler = (event) => {
         event.preventDefault();
         if (enteredName.trim().length === 0 || enteredAge.trim().length === 0) {
-            setModal('modalcontaineropen')
-            setTextModal("Please enter a valid name and age (no empty input field)")
+            setError(
+                {
+                    title: 'Invalid input',
+                    message: "Please enter a valid name and age (no empty input field)"
+                }
+            )
             return;
         }
         if (+enteredAge < 0) {
-            setModal('modalcontaineropen')
-            setTextModal("Please enter a valid age (> 0)")
+            setError(
+                {
+                    title: 'Invalid age',
+                    message: "Please enter a positive age ( > 0 )"
+                }
+            )
             return;
         }
         const userData = {
@@ -46,11 +54,8 @@ function UserForm(props) {
 
 
     }
-    const resetModal = (event) => {
-        event.preventDefault();
-        setModal('modalcontainer');
-        setEnteredName('');
-        setEnteredAge('');
+    const errorHandler = () => {
+        setError(null);
 
     }
 
@@ -74,12 +79,12 @@ function UserForm(props) {
                     <button type="submit">Add User</button>
                 </div>
             </div>
-            <Modal className={isModal} onClick={resetModal} text={textModal} />
+            {error && < Modal title={error.title} message={error.message} onClick={errorHandler} />}
         </form>
 
     )
 }
 
-// isValid ? 'modalcontainer' : 'modalcontaineropen'
+
 
 export default UserForm

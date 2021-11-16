@@ -1,15 +1,14 @@
 const Modal = (props) => {
 
     return (
-        <div className={props.className} id="modal">
+        <div className='modalcontainer' id="modal" onClick={props.onClick}>
             <div className="modal">
 
                 <div className="modalheader">
-                    <h3>Oops</h3>
-
+                    <h3>{props.title}</h3>
                 </div>
                 <div className="modalcontent" >
-                    <p>{props.text}</p>
+                    <p>{props.message}</p>
                     <button type="button" onClick={props.onClick}>Okay</button>
                 </div>
             </div>
