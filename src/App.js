@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, Fragment } from 'react'
 
 
 import './App.css';
@@ -19,8 +19,8 @@ const firstUsers = [
   },
   {
     id: 'e3',
-    name: 'Frank',
-    age: 53
+    name: 'Keith',
+    age: 123
   }
 ]
 
@@ -50,15 +50,13 @@ function App() {
 
 
   return (
-    <div className="App">
-
-
-
-      <UserForm onAddUser={addUser} />
-      <UserList items={users} onDeleteItem={deleteItemHandler} />
-
-
-    </div>
+    <Fragment>
+      <header><h1>Userlist</h1></header>
+      <div >
+        <UserForm onAddUser={addUser} />
+        <UserList items={users} onDeleteItem={deleteItemHandler} />
+      </div>
+    </Fragment>
   );
 }
 

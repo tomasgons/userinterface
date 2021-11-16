@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import Modal from './Modal';
+import Modal from './Modal'
+import Card from './Card';
+
 function UserForm(props) {
+
 
     const [enteredName, setEnteredName] = useState('');
     const [enteredAge, setEnteredAge] = useState('');
-
     const [error, setError] = useState('');
 
 
@@ -56,31 +58,35 @@ function UserForm(props) {
     }
     const errorHandler = () => {
         setError(null);
+        setEnteredName('')
+        setEnteredAge('')
 
     }
 
 
 
     return (
-
-        <form onSubmit={submitHandler} className="userform" >
-            <div className="">
-                <h1>UserList</h1>
-                <p>no empty fields and no negative age, try it out</p>
-                <div className="">
-                    <label>Name </label>
-                    <input type="text" value={enteredName} onChange={nameChangeHandler} />
-                </div>
-                <div className="">
-                    <label>Age (Years)</label>
-                    <input type="number" value={enteredAge} onChange={ageChangeHandler} />
-                </div>
-                <div className="">
-                    <button type="submit">Add User</button>
-                </div>
-            </div>
+        <Card>
             {error && < Modal title={error.title} message={error.message} onClick={errorHandler} />}
-        </form>
+            <form onSubmit={submitHandler} className="userform" >
+                <div >
+                    <h2>enter your details here</h2>
+                    <p>no empty fields and no negative age, try it out</p>
+                    <div>
+                        <label>Name </label>
+                        <input type="text" value={enteredName} onChange={nameChangeHandler} />
+                    </div>
+                    <div >
+                        <label>Age (Years)</label>
+                        <input type="number" value={enteredAge} onChange={ageChangeHandler} />
+                    </div>
+                    <div className="">
+                        <button type="submit">Add User</button>
+                    </div>
+                </div>
+
+            </form>
+        </Card>
 
     )
 }

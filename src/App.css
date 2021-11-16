@@ -2,14 +2,72 @@
   box-sizing: border-box;
 }
 body {
+  margin: 0 auto;
   background-color: #121418;
-}
-.App {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  max-width: 80%;
+  color: white;
+}
+
+header {
+  background-color: #f556d0;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+  color: white;
+  border-radius: 10px;
+}
+h2 {
+  color: #ebf450;
+}
+.Card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.userform {
+  background-color: #5e56f5;
+  margin: 30px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 20px 10px 20px;
+  color: white;
+  border-radius: 10px;
+}
+
+.userform label {
+  font-weight: bold;
+  display: block;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.userform input {
+  width: 100%;
+  border: 1px solid #ccc;
+  font: inherit;
+  line-height: 1.5rem;
+  padding: 0 0.25rem;
+  margin-bottom: 0.5rem;
+}
+.userform button {
+  background: rgb(52, 29, 198);
+  padding: 5px;
+  border-radius: 10px;
   color: white;
 }
 
@@ -20,7 +78,7 @@ body {
   flex-direction: column;
   align-items: normal;
   justify-content: center;
-  width: 70%;
+  width: 100%;
   padding: 10px 20px 10px 20px;
   color: white;
   border-radius: 10px;
@@ -49,42 +107,8 @@ body {
   background: rgb(255, 193, 193);
   color: red;
 }
-.userform {
-  background-color: #5e56f5;
-  margin-top: 30px;
-  display: flex;
-  flex-direction: column;
-  align-items: normal;
-  justify-content: center;
-  width: 70%;
-  padding: 10px 20px 10px 20px;
-  color: white;
-  border-radius: 10px;
-}
 
-.userform label {
-  font-weight: bold;
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-.userform input {
-  display: block;
-  width: 100%;
-  border: 1px solid #ccc;
-  font: inherit;
-  line-height: 1.5rem;
-  padding: 0 0.25rem;
-  margin-bottom: 0.5rem;
-}
-.userform button {
-  background: rgb(52, 29, 198);
-  padding: 5px;
-  border-radius: 10px;
-  color: white;
-}
-
-.modalcontainer {
+.modalBackdrop {
   background-color: rgba(0, 0, 0, 0.6);
   position: fixed;
   top: 0;
@@ -94,8 +118,6 @@ body {
 
   visibility: visible;
   opacity: 1;
-  -webkit-transition: visibility 0s, opacity 0.3s ease-in;
-  transition: visibility 0s, opacity 0.5s ease-in;
 }
 
 .modal {
