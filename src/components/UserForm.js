@@ -71,7 +71,6 @@ function UserForm(props) {
             <form onSubmit={submitHandler} className="userform" >
                 <div >
                     <h2>enter your details here</h2>
-                    <p>no empty fields and no negative age, try it out</p>
                     <div>
                         <label>Name </label>
                         <input type="text" value={enteredName} onChange={nameChangeHandler} />
