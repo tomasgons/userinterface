@@ -1,4 +1,4 @@
-import React, { useState, Fragment, } from 'react'
+import React, { useState, useEffect, Fragment, } from 'react'
 
 
 import './App.css';
@@ -13,14 +13,20 @@ const firstUsers = [
 
 function App() {
   const [users, setUsers] = useState(firstUsers);
-  // useEffect(() => {
-  //   const firstUsers = localStorage.getItem('users');
-  //   setUsers(firstUsers ? JSON.parse(firstUsers) : []);
-  // }, [])
+
+  useEffect(() => {
+    const firstUsers = localStorage.getItem('user');
+
+    if
+      (firstUsers ? setUsers() : []);
+  }, [])
 
   const addUser = (user) => {
     setUsers(prevUsers => {
+
       return [user, ...prevUsers];
+
+
 
     })
   };

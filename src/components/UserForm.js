@@ -47,7 +47,8 @@ function UserForm(props) {
         nameInputRef.current.value = ('')
         ageInputRef.current.value = ('')
 
-
+        localStorage.setItem('Name', userData.name);
+        localStorage.setItem('Age', userData.age)
     }
     const errorHandler = () => {
         setError(null);
